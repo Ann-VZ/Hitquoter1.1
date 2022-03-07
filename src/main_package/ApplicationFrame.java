@@ -75,15 +75,11 @@ public class ApplicationFrame extends JLabel {
             if (!analyzer.checkChart()) {
                 output.append("The user hasn't chosen a rectangle!\n");
             } else { // get and calculate values for output
-                double[] result = analyzer.getClosest();
-                double absValue = result[0];
+                double absValue = analyzer.calculateRatio();
                 String abs = String.format("%.3f", absValue);
                 double percentage = 400 * absValue;
                 String per = String.format("%.1f", percentage);
-                int step = (int) result[1];
-                output.append(abs+"   "+per+" percent   ");
-                if (step==-1) output.append("Step by extrema\n");
-                else output.append(step+"\n");
+                output.append(abs+"   "+per+" percent\n");
             }
         });
 
@@ -108,7 +104,7 @@ public class ApplicationFrame extends JLabel {
 
         container.add(mainPanel);
 
-        JLabel textLabel = new JLabel("Results(absolute value, percentage, analysis step)"); // label above output
+        JLabel textLabel = new JLabel("Results(absolute value, percentage)"); // label above output
         textLabel.setFont(new Font("Monotype Corsiva", Font.ITALIC, 25));
         textLabel.setBorder(new EmptyBorder(0, 0, 5, 5));
         textLabel.setForeground(new Color(10, 63, 222));
