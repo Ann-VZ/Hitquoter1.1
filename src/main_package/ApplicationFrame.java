@@ -12,8 +12,8 @@ public class ApplicationFrame extends JLabel {
             "Therefore, determination of a dependent (or independent) local randomness of an increase (or decrease) in the exchange price may be\n" +
             "in demand. \n" +
             "A nominal quote chart is a kind of broken line with points of highs and lows. We can copy it (or part of it) from the monitor screen \n" +
-            "using my application Hitquoter 1.0 in Java 8 and turn it into a discrete array. Offered demo version of the program analyzes\n" +
-            "a chart, which consists of red and green columns. Red columns mean decrease, while – increase.\n" +
+            "using my application Hitquoter 1.1 in Java 8 and turn it into a discrete array. Offered demo version of the program analyzes\n" +
+            "a chart, which consists of red and green columns. Red columns mean decrease, green – increase.\n" +
             "We will compare the resulting array with independent random oscillations based on fractal constructions. \n" +
             "The “Chaos game\" method is known for the Sierpinski triangle. In its construction, we choose three random static points on the plane. \n" +
             "Let’s find the midpoint of the segment from any of these points (also chosen at random) to the fourth, random dynamic point. Now this \n" +
@@ -25,7 +25,7 @@ public class ApplicationFrame extends JLabel {
             "Let’s take the arithmetic mean of the lengths of these segments. At large number of iterations the ratio of this mean to the length of \n" +
             "the segment between the first two static points will be approximately equal to ¼. We propose to use this fact to analyze quotes for \n" +
             "local randomness.\n" +
-            "My application Hitquoter 1.0 performs calculations of the change in value from the minimum one pixel step along the x-axis to the step \n" +
+            "My application Hitquoter 1.1 performs calculations of the change in value from the minimum one pixel step along the x-axis to the step \n" +
             "between the extremes. The program calculates the ratio of the amplitudes to the maximum difference of values in the selected fragment \n" +
             "of the chart and displays the result that is closest to ¼ in the window. In the result line, the first place is the absolute value of \n" +
             "the ratio, the second place takes that value in percent relative to ¼.\n" +
@@ -35,13 +35,13 @@ public class ApplicationFrame extends JLabel {
             "08 March 2022, Anna Zoikina";
 
     ApplicationFrame() {
-        JFrame frame = new JFrame("Hitquoter 1.0"); // our main frame
+        JFrame frame = new JFrame("Hitquoter 1.1"); // our main frame
         frame.setBounds(10, 20, 700, 500);
         frame.setMinimumSize(new Dimension(500, 350));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel greetingLabel = new JLabel("<html><body style='text-align: center'>Program for estimating the independence of" +
-                "<br>local fluctuations in stock quotes, version 1.0"); // the label with the heading
+                "<br>local fluctuations in stock quotes, version 1.1"); // the label with the heading
         greetingLabel.setHorizontalAlignment(JLabel.CENTER);
         greetingLabel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 20));
         greetingLabel.setFont(new Font("Monotype Corsiva", Font.ITALIC, 35));
