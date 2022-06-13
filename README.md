@@ -1,4 +1,4 @@
-# Hitquoter1.1
+# Hitquoter 1.1
 Program for estimating the independence of local fluctuations in stock quotes, version 1.1
 
 The study of fluctuations in exchange quotations remains an extremely topical task. An extensive software and technological apparatus was created to predict the market situation. However, its use is often ineffective in the specific practice of exchange trading. 
