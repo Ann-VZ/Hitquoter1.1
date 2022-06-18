@@ -74,6 +74,8 @@ public class ApplicationFrame extends JLabel {
             ChartAnalyzer analyzer = new ChartAnalyzer();
             if (!analyzer.checkChart()) {
                 output.append("The user hasn't chosen a rectangle!\n");
+            } else if (!analyzer.checkIfValid()) {
+                output.append("The rectangle isn't valid!\n");
             } else { // get and calculate values for output
                 double absValue = analyzer.calculateRatio();
                 String abs = String.format("%.3f", absValue);

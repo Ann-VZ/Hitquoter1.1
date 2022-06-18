@@ -1,6 +1,7 @@
 package main_package;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 // class for analyzing chart
 public class ChartAnalyzer {
@@ -15,6 +16,7 @@ public class ChartAnalyzer {
     // resulting mean(average) of column height
 
     final int PERCENT = 1; // percent of chart height with which we calculate minDiffOfHeight
+    boolean valid = true; // shows us, if the rectangle the user selected is valid (has columns)
 
     //final Color black = new Color(0, 0, 0);
 
@@ -29,6 +31,11 @@ public class ChartAnalyzer {
         height = converter.height;
 
         ArrayList<Column> columns = getColumns(); // convert chart from matrix to array of columns
+
+        if (columns.isEmpty()) {
+            valid = false;
+            return;
+        }
 
         setChartHeight(columns);
         minDiffOfHeight = chartHeight * PERCENT / 100.0;
@@ -111,6 +118,10 @@ public class ChartAnalyzer {
     boolean checkChart() { // check if chart exists - if the user has chosen a rectangle
         if (chart==null) return false;
         return true;
+    }
+
+    boolean checkIfValid() {
+        return valid;
     }
 
     /*public static void main(String[] args) {
